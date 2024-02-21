@@ -16,7 +16,7 @@ pipeline {
                 withMaven(globalMavenSettingsConfig: 'ae44f8b3-3bf7-4624-8e87-74659f3f817f', maven: 'maven3', traceability: true) {
                     sh "mvn clean install"
                 }
-                recordIssues(tools: [junitParser(), mavenConsole()])
+                recordIssues(tools: [mavenConsole()])
             }
         }
     }
